@@ -1,6 +1,6 @@
 # PartyAppMobile
 
-PROJETO NO FIGMA ----------------------------------------->> https://www.figma.com/file/tj82IcClr5erxg0lbAZ6L9/Prototyping-in-Figma?node-id=0%3A1
+PROJETO NO FIGMA ----------------------------->> https://www.figma.com/file/tj82IcClr5erxg0lbAZ6L9/Prototyping-in-Figma?node-id=0%3A1
 
 EMPATIA
 1 - Comece com a empatia levantando hipóteses sobre o que as pessoas precisam, pode fazer isso fazendo análise de um grupo específico. (ambiente escolar, mensagens, música, transporte.)
