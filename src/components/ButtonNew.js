@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import { styles } from '../../assets/css/style';
+import { styles } from '../assets/css/style';
 
 export default function ButtonNew(){
    return(
