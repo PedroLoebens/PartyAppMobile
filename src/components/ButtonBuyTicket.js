@@ -15,7 +15,7 @@ export function ButtonBuyTicket(){
          end={{ x: 0, y: 0 }}
          >
             <TouchableOpacity>
-               <Text style={styles.buttonBuyText}>Buy Tickets</Text>
+               <Text style={styles.buttonBuyText}>Buy Ticket</Text>
             </TouchableOpacity> 
          </LinearGradient>
       </View>
