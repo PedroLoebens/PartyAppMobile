@@ -1,7 +1,9 @@
 import React from "react";
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+
+import { styles } from '../../assets/css/style';
 
 export default function ButtonNew(){
    return(
@@ -9,20 +11,10 @@ export default function ButtonNew(){
          <LinearGradient
          colors={['#FF00D6', '#FF4D00']}
          locations={[0, 1]}
-         style={styles.linearGradient}
+         style={styles.gradientBtnNew}
          >
-          <Feather name="plus" size={20} color={'#ffffff'} />  
+            <Feather style={styles.iconPlus} name="plus" size={20} color={'#ffffff'} />  
          </LinearGradient>
       </View>
    )
 }
-
-const styles = StyleSheet.create({
-   linearGradient: {
-      paddingLeft: 18,
-      paddingRight: 18,
-      paddingBottom: 5,
-      paddingTop: 5,
-      borderRadius: 50,
-   }
-})
