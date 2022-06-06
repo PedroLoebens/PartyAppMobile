@@ -17,10 +17,10 @@ const styles = StyleSheet.create({
       borderRadius: 50,
    },
    buttonBuyText: {
-      fontFamily: 'Comfortaa',
+      fontFamily: 'Comfortaa_400Regular',
       fontSize: 17,
       color: '#ffffff',
-      marginTop: 10,
+      marginTop: 7.3,
       textAlign: 'center',
       textAlignVertical: 'center',
    },
@@ -36,12 +36,12 @@ const styles = StyleSheet.create({
    },
    title: {
       fontSize: 36,
-      fontFamily: 'Comfortaa',
+      fontFamily: 'Comfortaa_400Regular',
       lineHeight: 40,
    },
    titleHome: {
       fontSize: 36,
-      fontFamily: 'Comfortaa',
+      fontFamily: 'Comfortaa_400Regular',
       lineHeight: 40,
       textTransform: 'uppercase',
    },

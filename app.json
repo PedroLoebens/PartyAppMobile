@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "party-app-mobile",
+    "name": "Party App Mobile",
     "slug": "party-app-mobile",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "orientation": "portrait",
-    "icon": "./src/assets/icon.png",
+    "icon": "./src/assets/icon2.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/splash.png",
+      "image": "./src/assets/splash2.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -22,9 +22,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./src/assets/adaptive-icon2.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.gabrielschiavo.partyappmobile"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
