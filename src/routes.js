@@ -5,8 +5,6 @@ import { Entypo, Feather } from '@expo/vector-icons';
 import Home from './pages/Home.js';
 import Search from './pages/Search.js';
 import New from './pages/New.js';
-import Profile from './pages/Profile.js';
-import Menu from './pages/Menu.js';
 
 import ButtonNew from "./components/ButtonNew";
 
@@ -18,7 +16,8 @@ export default function Routes(){
       barStyle={{ 
          backgroundColor: '#ffffff',
          borderTopWidth: 1,
-         borderColor: '#a6a6a6', 
+         borderColor: '#a6a6a6',
+         backBehavior: 'history'
       }}
       >
          <Tab.Screen 
@@ -29,16 +28,6 @@ export default function Routes(){
                <Entypo name="home" size={20} color={color} />
             ),
          }} 
-         />
-
-         <Tab.Screen 
-         name="Search" 
-         component={Search} 
-         options={{
-            tabBarIcon: ({ color }) => (
-               <Feather name="search" size={20} color={color} />
-            ),
-         }}
          />
 
          <Tab.Screen 
@@ -53,24 +42,15 @@ export default function Routes(){
          />
 
          <Tab.Screen 
-         name="Profile" 
-         component={Profile}
+         name="Search" 
+         component={Search} 
          options={{
             tabBarIcon: ({ color }) => (
-               <Feather name="user" size={20} color={color} />
+               <Feather name="search" size={20} color={color} />
             ),
          }}
          />
 
-         <Tab.Screen 
-         name="Menu" 
-         component={Menu}
-         options={{
-            tabBarIcon: ({ color }) => (
-               <Feather name="menu" size={20} color={color} />
-            ),
-         }} 
-         />
       </Tab.Navigator>
    )
 }
