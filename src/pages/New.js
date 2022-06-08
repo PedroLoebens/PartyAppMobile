@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View, StatusBar } from 'react-native';
+import { Text, View, StatusBar, TextInput } from 'react-native';
+import { ButtonConfirm } from '../components/ButtonConfirm'
 
 import { styles } from '../assets/css/style';
 
@@ -12,7 +13,11 @@ export default function New() {
         barStyle={"dark-content"}
       />
       
-      <Text style={styles.title}>New</Text>
+      <Text style={styles.title}>New Event</Text>
+      <View style={styles.containerInputs}>
+        <TextInput style={styles.input}/>
+        <ButtonConfirm></ButtonConfirm>
+      </View>
 
       
     </View>

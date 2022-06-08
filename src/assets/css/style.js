@@ -52,7 +52,30 @@ const styles = StyleSheet.create({
       paddingTop: 12,
       lineHeight: 15,
       textTransform: 'uppercase',
-   }
+   },
+   input: {
+      borderWidth: 2,
+      borderColor: "#000000",
+      backgroundColor: '#ffffff',
+      padding: 5,
+      marginBottom: 10,
+   },
+   containerInputs: {
+      marginTop: 20,
+   },
+   gradientBtnConfirm: {
+      width: 160,
+      height: 45,
+      borderRadius: 50,
+   },
+   buttonConfirmText: {
+      fontFamily: 'Comfortaa_400Regular',
+      fontSize: 17,
+      color: '#ffffff',
+      marginTop: 7.3,
+      textAlign: 'center',
+      textAlignVertical: 'center',
+   },
 });
 
 export { styles };
