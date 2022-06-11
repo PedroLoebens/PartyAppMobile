@@ -1,6 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({ 
+   scrollView: {
+      marginVertical: 0,
+      backgroundColor: '#ffffff',
+   },
    gradientBtnNew: {
       width: 55,
       height: 30,
@@ -12,15 +16,17 @@ const styles = StyleSheet.create({
       textAlignVertical: 'center',
    },
    gradientBtnBuy: {
-      width: 160,
-      height: 45,
+      width: 110,
+      height: 35,
       borderRadius: 50,
+      alignSelf: 'flex-end',
+      margin: 10
    },
    buttonBuyText: {
       fontFamily: 'Comfortaa_400Regular',
-      fontSize: 17,
+      fontSize: 15,
       color: '#ffffff',
-      marginTop: 7.3,
+      marginTop: 3.5,
       textAlign: 'center',
       textAlignVertical: 'center',
    },
@@ -47,26 +53,35 @@ const styles = StyleSheet.create({
    },
    subtitle: {
       fontSize: 13,
-      fontFamily: 'Roboto',
+      fontFamily: 'Roboto_400Regular',
       fontWeight: 'bold',
       paddingTop: 12,
       lineHeight: 15,
       textTransform: 'uppercase',
    },
+   label: {
+      fontSize: 13,
+      fontFamily: 'Roboto_400Regular',
+      marginBottom: 4,
+   },
    input: {
       borderWidth: 2,
       borderColor: "#000000",
       backgroundColor: '#ffffff',
-      padding: 5,
-      marginBottom: 10,
+      padding: 10,
+      marginBottom: 18,
+      width: 300
    },
    containerInputs: {
       marginTop: 20,
+      alignSelf: 'center'
    },
    gradientBtnConfirm: {
       width: 160,
       height: 45,
       borderRadius: 50,
+      alignSelf: 'center',
+      marginBottom: 25,
    },
    buttonConfirmText: {
       fontFamily: 'Comfortaa_400Regular',
@@ -76,6 +91,62 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       textAlignVertical: 'center',
    },
+   ButtonUpload: {
+      borderWidth: 1,
+      borderRadius: 50,
+      marginBottom: 15,
+      paddingTop: 8,
+      paddingBottom: 8,
+      textAlign: 'center',
+      textAlignVertical: 'center',
+   },
+   containerEvents: {
+      marginTop: 20,
+      marginBottom: 20,
+      borderWidth: 2,
+      borderRadius: 7,
+      width: '100%',
+      
+   },
+   imageEvent: {
+      fontFamily: 'Comfortaa_400Regular',
+      fontSize: 13,
+      padding: 10,
+      borderLeftWidth: 1,
+      borderRightWidth: 1,
+      borderTopWidth: 1,
+   },
+   titleEvent: {
+      fontFamily: 'Comfortaa_400Regular',
+      fontSize: 15,
+      padding: 10,
+      borderWidth: 1,
+      textAlign: 'center',
+      fontWeight: 'bold',
+      borderTopWidth: 0
+   },
+   textEvent: {
+      fontFamily: 'Comfortaa_400Regular',
+      fontSize: 13,
+      padding: 10,
+      borderWidth: 1,
+   },
+   priceEvent: {
+      fontFamily: 'Comfortaa_400Regular',
+      fontSize: 13,
+      padding: 10,
+      borderWidth: 1,
+      borderBottomWidth: 2
+   },
+   btnUpdate: {
+      marginTop: 15,
+      fontVariant: ''
+   }, 
+   textBtnUpdate: {
+      fontFamily: 'Comfortaa_400Regular',
+      fontSize: 14,
+      color: '#000000'
+   }
 });
 
 export { styles };
