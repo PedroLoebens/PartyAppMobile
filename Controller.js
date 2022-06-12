@@ -32,7 +32,7 @@ app.get('/read', async (req,res)=>{
         raw:true
     });
     res.send(JSON.stringify(read));
-    console.log(read);
+    // console.log(read);
 });
 
 //Start server

@@ -3,7 +3,7 @@ import { Alert,Text, View, StatusBar, TextInput, TouchableWithoutFeedback, Keybo
 import { LinearGradient } from 'expo-linear-gradient';
 import config from "../../config/config.json";
 import MaskInput, { Masks } from 'react-native-mask-input';
-import { ButtonUpload } from '../components/ButtonUpload'
+import { Feather } from '@expo/vector-icons';
 
 
 import { styles } from '../assets/css/style';
@@ -88,10 +88,9 @@ export default function New() {
             />
 
             <Text style={styles.label}>Escolha uma Imagem:</Text>
-              <TouchableOpacity>
-                 <Text style={styles.ButtonUpload}>Procurar Imagem</Text>
-              </TouchableOpacity> 
-            {/* <TextInput style={styles.input} placeholder="Escolha a imagem do evento" onChangeText={(text)=>setImage(text)}/> */}
+            <TouchableOpacity style={styles.btnUpload}>
+              <Text style={styles.textBtnUpload}><Feather name="upload" size={15} />   Procurar Imagem</Text>
+            </TouchableOpacity>
 
             <LinearGradient colors={[ '#00e3ae', '#9be15d' ]} locations={[0, 1]} style={styles.gradientBtnConfirm} start={{ x: 1, y: 1 }} end={{ x: 0, y: 0 }}>
               <TouchableOpacity onPress={registerEvent}>
