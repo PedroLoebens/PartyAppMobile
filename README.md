@@ -19,7 +19,7 @@
 * Vai ser usado pelas pessoas para procurar por eventos na região.
 * Os eventos constarão: localização, data e hora, valor do ingresso (com opção de compra), número de pessoas que compraram ingresso, a atração da noite, estilo musical e contará com fotos do ambiente.
 
-## 	:hammer_and_wrench: Abrir e rodar o projeto
+## :hammer_and_wrench: Abrir e rodar o projeto
 Após baixar o projeto, você pode abrir com o Visual Studio Code. Para o projeto funcionar você deve ter configurado em seu PC:
 
 * Node.js - Versão >= 16.14.2
