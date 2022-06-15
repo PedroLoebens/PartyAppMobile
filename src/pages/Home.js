@@ -10,7 +10,7 @@ export default function Home() {
   async function loadingEvents()
   {
     let read = await fetch(config.urlRootNode+'read',{
-        
+      method: 'GET',
     });
     const Events=await read.json();
     setEvents(Events);
@@ -31,7 +31,7 @@ export default function Home() {
         />
         
         <Text style={styles.titleHome}>Festas ao redor</Text>
-        <Text style={styles.subtitle}>Encontre o melhor pra você</Text>
+        <Text style={styles.subtitle}>Encontre o melhor para você</Text>
 
         <TouchableOpacity style={styles.btnUpdate} onPress={loadingEvents}>
           <Text style={styles.textBtnUpdate}><Feather name="refresh-ccw" size={15} />   Atualizar Eventos</Text>

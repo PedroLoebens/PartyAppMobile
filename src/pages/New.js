@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Alert,Text, View, StatusBar, TextInput, TouchableWithoutFeedback, Keyboard, TouchableOpacity, ScrollView} from 'react-native';
+import { Text, View, StatusBar, TextInput, TouchableWithoutFeedback, Keyboard, TouchableOpacity, ScrollView, Image} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import config from "../../config/config.json";
 import MaskInput, { Masks } from 'react-native-mask-input';
 import { Feather } from '@expo/vector-icons';
 
 
+
 import { styles } from '../assets/css/style';
 
 export default function New() {
+  const goTop = React.useRef();
+
   const [name,setName]=useState(null);
   const [place,setPlace]=useState(null);
   const [date,setDate]=useState('');
@@ -19,7 +22,7 @@ export default function New() {
   //Envia os dados do formulário para o backend
   async function registerEvent()
   {
-    let reqs = await fetch(config.urlRootNode+'create',{
+    let create = await fetch(config.urlRootNode+'create',{
         method: 'POST',
         headers:{
             'Accept':'application/json',
@@ -33,26 +36,22 @@ export default function New() {
             imageEvent: image,
         })
     });
-    let ress=await reqs.json();
+    let ress=await create.json();
     setMessage(ress);
 
-    Alert.alert(
-      "Sucesso!",
-      "Evento cadastrado.",
-      [
-        {
-          text: "OK",
-          style: "OK",
-        },
-      ],
-      {
-        cancelable: true,
-      }
-    )
+    goTop.current.scrollTo({
+      x: 0,
+      y: 0,
+      animated: true,
+    });
+
+    
   }
 
+  
+
   return (
-    <ScrollView style={styles.scrollView}>
+    <ScrollView ref={goTop} style={styles.scrollView}>
       <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>
         <View style={styles.container}>
           <StatusBar
@@ -61,7 +60,10 @@ export default function New() {
             barStyle={"dark-content"}
           />
 
-          <Text style={styles.title}>New Event</Text>
+          <Text style={styles.title}>Novo Evento</Text>
+          {message && (
+              <Text style={styles.message}>{message}</Text>
+          )}
           <View style={styles.containerInputs}>
             <Text style={styles.label}>Nome do Evento:</Text>
             <TextInput style={styles.input} placeholder="Digite o nome do evento" onChangeText={(text)=>setName(text)}/>
@@ -88,13 +90,14 @@ export default function New() {
             />
 
             <Text style={styles.label}>Escolha uma Imagem:</Text>
-            <TouchableOpacity style={styles.btnUpload}>
+            <TouchableOpacity style={styles.btnUpload} >
               <Text style={styles.textBtnUpload}><Feather name="upload" size={15} />   Procurar Imagem</Text>
             </TouchableOpacity>
+            
 
             <LinearGradient colors={[ '#00e3ae', '#9be15d' ]} locations={[0, 1]} style={styles.gradientBtnConfirm} start={{ x: 1, y: 1 }} end={{ x: 0, y: 0 }}>
               <TouchableOpacity onPress={registerEvent}>
-                 <Text style={styles.buttonConfirmText}>Confirm</Text>
+                 <Text style={styles.buttonConfirmText}>Confirmar</Text>
               </TouchableOpacity> 
            </LinearGradient>
 

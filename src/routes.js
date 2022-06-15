@@ -42,7 +42,7 @@ export default function Routes(){
          />
 
          <Tab.Screen 
-         name="Search" 
+         name="Buscar" 
          component={Search} 
          options={{
             tabBarIcon: ({ color }) => (

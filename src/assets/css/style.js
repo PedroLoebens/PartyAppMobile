@@ -102,14 +102,15 @@ const styles = StyleSheet.create({
    containerEvents: {
       marginTop: 20,
       marginBottom: 20,
-      borderRadius: 7,
       width: '100%',
       borderBottomWidth: 1,
    },
    imageEvent: {
-      width: '100%',
-      resizeMode: 'stretch',   // ou contain
+      width: 302,
+      height: 454,
+      resizeMode: 'stretch',
       borderRadius: 10,  
+      alignSelf:'center'
    },
    titleEvent: {
       fontFamily: 'Comfortaa_400Regular',
@@ -134,6 +135,17 @@ const styles = StyleSheet.create({
    },
    
    // Page New
+   message: {
+      fontSize: 15,
+      color: '#0f5132',
+      fontFamily: 'Comfortaa_400Regular',
+      backgroundColor: '#d1e7dd',
+      borderRadius: 8,
+      marginTop: 25,
+      padding: 15,
+      textAlign: 'center',
+      alignSelf: 'center',
+   },
    btnUpload: {
       marginTop: 4,
       marginBottom: 20,
@@ -143,8 +155,20 @@ const styles = StyleSheet.create({
       fontSize: 14,
       color: '#000000'
    },
+   imagePreview: {
+      width: 302,
+      height: 454,
+      marginBottom: 20,
+      alignSelf: 'center',
+      borderRadius: 10,
+   },
 
    //Page Search
+   containerSearchEvents: {
+      marginTop: 20,
+      marginBottom: 20,
+      borderBottomWidth: 1,
+   }
 });
 
 export { styles };
