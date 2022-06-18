@@ -2,7 +2,7 @@
   "expo": {
     "name": "Party App Mobile",
     "slug": "party-app-mobile",
-    "version": "1.0.7",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./src/assets/icons/icon2.png",
     "userInterfaceStyle": "light",
@@ -25,7 +25,7 @@
         "foregroundImage": "./src/assets/icons/adaptive-icon2.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.gabrielschiavo.partyappmobile"
+      "package": "com.pedroloebens.partyappmobile"
     },
     "web": {
       "favicon": "./src/assets/icons/favicon.png"

@@ -8,6 +8,9 @@ import New from './pages/New.js';
 
 import ButtonNew from "./components/ButtonNew";
 
+{/* <uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> */}
+
 const Tab = createMaterialBottomTabNavigator();
 
 export default function Routes(){
