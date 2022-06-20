@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, StatusBar, TextInput, TouchableWithoutFeedback, Keyboard, TouchableOpacity, ScrollView, Image} from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, StatusBar, TextInput, TouchableWithoutFeedback, Keyboard, TouchableOpacity, ScrollView, Button} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import config from "../../config/config.json";
 import MaskInput, { Masks } from 'react-native-mask-input';
 import { Feather } from '@expo/vector-icons';
+import { UploadImage } from '../components/PhotoComponent';
 
 
 
@@ -16,7 +17,6 @@ export default function New() {
   const [place,setPlace]=useState(null);
   const [date,setDate]=useState('');
   const [price,setPrice]=useState(null);
-  const [image,setImage]=useState(null);
   const [message,setMessage]=useState(null);
 
   //Envia os dados do formulário para o backend
@@ -44,11 +44,7 @@ export default function New() {
       y: 0,
       animated: true,
     });
-
-    
   }
-
-  
 
   return (
     <ScrollView ref={goTop} style={styles.scrollView}>
@@ -79,6 +75,8 @@ export default function New() {
               onChangeText={(text)=>setDate(text)}
               mask={Masks.DATE_DDMMYYYY}
             />
+            
+            
 
             <Text style={styles.label}>Preço do Ingresso:</Text>
             <MaskInput
@@ -88,12 +86,10 @@ export default function New() {
               onChangeText={(text)=>setPrice(text)}
               mask={Masks.BRL_CURRENCY}
             />
-
-            <Text style={styles.label}>Escolha uma Imagem:</Text>
-            <TouchableOpacity style={styles.btnUpload} >
-              <Text style={styles.textBtnUpload}><Feather name="upload" size={15} />   Procurar Imagem</Text>
-            </TouchableOpacity>
             
+            <TouchableOpacity>
+              <UploadImage />
+            </TouchableOpacity>
 
             <LinearGradient colors={[ '#00e3ae', '#9be15d' ]} locations={[0, 1]} style={styles.gradientBtnConfirm} start={{ x: 1, y: 1 }} end={{ x: 0, y: 0 }}>
               <TouchableOpacity onPress={registerEvent}>
@@ -104,6 +100,7 @@ export default function New() {
           </View>
         </View>
       </TouchableWithoutFeedback>
+        
     </ScrollView>    
   );
 }
