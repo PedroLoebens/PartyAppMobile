@@ -2,7 +2,7 @@
   "expo": {
     "name": "Party App Mobile",
     "slug": "party-app-mobile",
-    "version": "0.10.0",
+    "version": "0.10.1",
     "orientation": "portrait",
     "icon": "./src/assets/icons/icon2.png",
     "userInterfaceStyle": "light",
@@ -26,14 +26,7 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.gabrielschiavo.partyappmobile"
-    },
-    "plugins": [
-      [
-        "expo-image-picker",
-        {
-          "photosPermission": "The application needs access to your photos to allow you to use them in registering events."
-        }
-      ]
-    ]
+    }
+    
   }
 }

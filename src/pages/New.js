@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import config from "../../config/config.json";
 import MaskInput, { Masks } from 'react-native-mask-input';
 import { Feather } from '@expo/vector-icons';
-
+import * as ImagePicker from 'expo-image-picker';
 
 
 import { styles } from '../assets/css/style';
@@ -45,10 +45,19 @@ export default function New() {
       animated: true,
     });
 
-    
+    setName({
+      name: '',
+    });
+    setPlace({
+      place: '',
+    });
+    // setDate({
+    //   date: '',
+    // });
+    // setPrice({
+    //   price: '',
+    // });
   }
-
-  
 
   return (
     <ScrollView ref={goTop} style={styles.scrollView}>
@@ -66,10 +75,10 @@ export default function New() {
           )}
           <View style={styles.containerInputs}>
             <Text style={styles.label}>Nome do Evento:</Text>
-            <TextInput style={styles.input} placeholder="Digite o nome do evento" onChangeText={(text)=>setName(text)}/>
+            <TextInput style={styles.input} placeholder="Digite o nome do evento" onChangeText={(text)=>setName(text)} value={name}/>
 
             <Text style={styles.label}>Local do Evento:</Text>
-            <TextInput style={styles.input} placeholder="Digite o local do evento" onChangeText={(text)=>setPlace(text)}/>
+            <TextInput style={styles.input} placeholder="Digite o local do evento" onChangeText={(text)=>setPlace(text)} value={place}/>
 
             <Text style={styles.label}>Data do Evento:</Text>
             <MaskInput
@@ -90,10 +99,10 @@ export default function New() {
             />
 
             <Text style={styles.label}>Escolha uma Imagem:</Text>
-            <TouchableOpacity style={styles.btnUpload} >
+            <TouchableOpacity style={styles.btnUpload}>
               <Text style={styles.textBtnUpload}><Feather name="upload" size={15} />   Procurar Imagem</Text>
             </TouchableOpacity>
-            
+
 
             <LinearGradient colors={[ '#00e3ae', '#9be15d' ]} locations={[0, 1]} style={styles.gradientBtnConfirm} start={{ x: 1, y: 1 }} end={{ x: 0, y: 0 }}>
               <TouchableOpacity onPress={registerEvent}>
