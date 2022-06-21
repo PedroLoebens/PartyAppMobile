@@ -25,10 +25,6 @@ export default function Search() {
     });
     const ResulResearches=await resulSearch.json();
     setResulResearches(ResulResearches);
-
-    setSearch({
-      search: '',
-    });
   }
   const [ResulResearches,setResulResearches]=useState();
 
@@ -46,7 +42,7 @@ export default function Search() {
 
         <View style={styles.containerInputs}>
             <Text style={styles.label}>Buscar evento:</Text>
-            <TextInput style={styles.input} placeholder="Digite o nome do evento" onChangeText={(text)=>setSearch(text)} value={search}/>
+            <TextInput style={styles.input} placeholder="Digite o nome do evento" onChangeText={(text)=>setSearch(text)}/>
 
             <LinearGradient colors={[ '#00e3ae', '#9be15d' ]} locations={[0, 1]} style={styles.gradientBtnConfirm} start={{ x: 1, y: 1 }} end={{ x: 0, y: 0 }}>
               <TouchableOpacity onPress={newSearch}>
