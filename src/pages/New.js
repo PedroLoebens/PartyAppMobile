@@ -7,7 +7,6 @@ import { Feather } from '@expo/vector-icons';
 import { UploadImage } from '../components/PhotoComponent';
 
 
-
 import { styles } from '../assets/css/style';
 
 export default function New() {
@@ -17,6 +16,7 @@ export default function New() {
   const [place,setPlace]=useState(null);
   const [date,setDate]=useState('');
   const [price,setPrice]=useState(null);
+  const [image,setImage]=useState(null);
   const [message,setMessage]=useState(null);
 
   //Envia os dados do formulário para o backend
@@ -44,8 +44,21 @@ export default function New() {
       y: 0,
       animated: true,
     });
-  }
 
+    setName({
+      name: '',
+    });
+    setPlace({
+      place: '',
+    });
+    // setDate({
+    //   date: '',
+    // });
+    // setPrice({
+    //   price: '',
+    // });
+  }
+  
   return (
     <ScrollView ref={goTop} style={styles.scrollView}>
       <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>
@@ -62,10 +75,10 @@ export default function New() {
           )}
           <View style={styles.containerInputs}>
             <Text style={styles.label}>Nome do Evento:</Text>
-            <TextInput style={styles.input} placeholder="Digite o nome do evento" onChangeText={(text)=>setName(text)}/>
+            <TextInput style={styles.input} placeholder="Digite o nome do evento" onChangeText={(text)=>setName(text)} value={name}/>
 
             <Text style={styles.label}>Local do Evento:</Text>
-            <TextInput style={styles.input} placeholder="Digite o local do evento" onChangeText={(text)=>setPlace(text)}/>
+            <TextInput style={styles.input} placeholder="Digite o local do evento" onChangeText={(text)=>setPlace(text)} value={place}/>
 
             <Text style={styles.label}>Data do Evento:</Text>
             <MaskInput
@@ -75,8 +88,6 @@ export default function New() {
               onChangeText={(text)=>setDate(text)}
               mask={Masks.DATE_DDMMYYYY}
             />
-            
-            
 
             <Text style={styles.label}>Preço do Ingresso:</Text>
             <MaskInput
@@ -86,7 +97,7 @@ export default function New() {
               onChangeText={(text)=>setPrice(text)}
               mask={Masks.BRL_CURRENCY}
             />
-            
+
             <TouchableOpacity>
               <UploadImage />
             </TouchableOpacity>
@@ -100,7 +111,6 @@ export default function New() {
           </View>
         </View>
       </TouchableWithoutFeedback>
-        
     </ScrollView>    
   );
 }
