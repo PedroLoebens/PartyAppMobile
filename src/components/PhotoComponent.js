@@ -45,19 +45,14 @@ export function UploadImage() {
          }
 
       )
-
- 
-
    }
    return (
       <SafeAreaView>
          <Text style={styles.label}>Escolha uma Imagem:</Text>
          <TouchableOpacity style={styles.btnUpload} onPress={() => handleImageSelector()}>
             <Text style={styles.textBtnUpload}><Feather name="upload" size={15} />   Procurar Imagem</Text>
-
          </TouchableOpacity>
       </SafeAreaView>
    )
-
 }
 

@@ -8,9 +8,6 @@ import New from './pages/New.js';
 
 import ButtonNew from "./components/ButtonNew";
 
-{/* <uses-permission android:name="android.permission.CAMERA" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> */}
-
 const Tab = createMaterialBottomTabNavigator();
 
 export default function Routes(){
@@ -45,7 +42,7 @@ export default function Routes(){
          />
 
          <Tab.Screen 
-         name="Search" 
+         name="Buscar" 
          component={Search} 
          options={{
             tabBarIcon: ({ color }) => (
