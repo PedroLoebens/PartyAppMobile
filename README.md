@@ -12,7 +12,7 @@
 * Pensando no marketing, buscaremos elaborar um aplicativo que ajuda empresários que promovem festas a divulgarem seus eventos com local e data de uma forma que chegue até o público consumidor de forma simples e automática, onde o próprio consumidor vai buscar por isso.
 * Também pensando nos jovens e adultos que gostam de uma boa festa mas geralmente não sabem quando e onde vai acontecer e, se realmente mais pessoas irão, o que torna em teoria a festa mais “empolgante”.
 
-3- `IDEALIZAR:` Chuva de ideias: depois de definir o problema realize com seu grupo uma chuva de ideias, todas são válidas, um dos membros do grupo pode ficar encarregado de anotá-las. (4 ideias no mínimo).
+3- `IDEALIZAR:` Chuva de ideias: depois de definir o problema realize com seu grupo uma chuva de ideias, todas são válidas, um dos membros do grupo pode ficar encarregado de anotá-las.
 
 * O aplicativo será voltado para dois públicos: jovens/adultos e empresas
 * Será voltado para realizar marketing e vender ingressos de eventos no caso das empresas (funcionalidade paga)
