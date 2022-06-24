@@ -1,4 +1,7 @@
 # PartyAppMobile
+<p align="left">
+    <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-orange?style=for-the-badge"/>
+</p>
 
 * `PROJETO NO FIGMA` ----------->> https://www.figma.com/file/tj82IcClr5erxg0lbAZ6L9/Prototyping-in-Figma?node-id=0%3A1
 
