@@ -19,6 +19,12 @@
 * Vai ser usado pelas pessoas para procurar por eventos na região.
 * Os eventos constarão: localização, data e hora, valor do ingresso (com opção de compra), número de pessoas que compraram ingresso, a atração da noite, estilo musical e contará com fotos do ambiente.
 
+## :hammer: Funcionalidades do projeto
+* `Cadastro de eventos`: cadastro dos eventos com nome, local, data, preço do ingresso e imagem.
+* `Uploads de imagens`: upload de imagem para os eventos.
+* `Exibição dos eventos cadastrados`: exibição na tela Home de todos os eventos cadastrados no banco de dados.
+* `Pesquisa de eventos`: opção de pesquisar eventos pelo nome.
+
 ## :hammer_and_wrench: Abrir e rodar o projeto
 Após baixar o projeto, você pode abrir com o Visual Studio Code. Para o projeto funcionar você deve ter configurado em seu PC:
 
@@ -47,7 +53,6 @@ Agora o projeto está pronto para uso.
 * `Node.js - 16.14.2`
 * `Expo - 45.0.0`
 * `React Native - 0.68.2`
-* `React Navigation - 6.0.10`
 * `Express - 4.18.1`
 * `Sequelize - 6.20.1`
 * `Nodemon - 2.0.16`
