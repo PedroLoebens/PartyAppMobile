@@ -42,3 +42,14 @@ Em outro terminal na raiz do projeto execute:
 * nodemon Controller
 
 Agora o projeto está pronto para uso. 
+
+## :heavy_check_mark: Tecnologias utilizadas
+* `Node.js - 16.14.2`
+* `Expo - 45.0.0`
+* `React Native - 0.68.2`
+* `React Navigation - 6.0.10`
+* `Express - 4.18.1`
+* `Sequelize - 6.20.1`
+* `Nodemon - 2.0.16`
+* `MySQL`
+* `JavaScript`
