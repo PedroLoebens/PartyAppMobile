@@ -20,7 +20,17 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
+  "expo": {
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ]
+  },
 
-  "urlRootNode": "http://192.168.0.168:3000"
+  "urlRootNode": "http://10.0.152.163:3000"
   
 }
