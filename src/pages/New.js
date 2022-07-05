@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Text, View, StatusBar, TextInput, TouchableWithoutFeedback, Keyboard, TouchableOpacity, ScrollView, Button} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, StatusBar, TextInput, TouchableWithoutFeedback, Keyboard, TouchableOpacity, ScrollView, Image} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import config from "../../config/config.json";
 import MaskInput, { Masks } from 'react-native-mask-input';
 import { Feather } from '@expo/vector-icons';
-import { UploadImage } from '../components/PhotoComponent';
+import * as ImagePicker from 'expo-image-picker';
 
 
 import { styles } from '../assets/css/style';
@@ -58,7 +58,22 @@ export default function New() {
     //   price: '',
     // });
   }
-  
+
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [8, 12],
+      quality: 1,
+    });
+
+    console.log(result);
+
+    if (!result.cancelled) {
+      setImage(result.uri);
+    }
+  };
+
   return (
     <ScrollView ref={goTop} style={styles.scrollView}>
       <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>
@@ -98,9 +113,11 @@ export default function New() {
               mask={Masks.BRL_CURRENCY}
             />
 
-            <TouchableOpacity>
-              <UploadImage />
+            <Text style={styles.label}>Escolha uma Imagem:</Text>
+            <TouchableOpacity style={styles.btnUpload} onPress={pickImage}>
+              <Text style={styles.textBtnUpload}><Feather name="upload" size={15} />   Procurar Imagem</Text>
             </TouchableOpacity>
+            {image && <Image onChangeText={(text)=>setImage(text)} source={{ uri: image }} style={styles.imagePreview} />}
 
             <LinearGradient colors={[ '#00e3ae', '#9be15d' ]} locations={[0, 1]} style={styles.gradientBtnConfirm} start={{ x: 1, y: 1 }} end={{ x: 0, y: 0 }}>
               <TouchableOpacity onPress={registerEvent}>

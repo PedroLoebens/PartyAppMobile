@@ -1,4 +1,7 @@
 # PartyAppMobile
+<p align="left">
+    <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-orange?style=for-the-badge"/>
+</p>
 
 * `PROJETO NO FIGMA` ----------->> https://www.figma.com/file/tj82IcClr5erxg0lbAZ6L9/Prototyping-in-Figma?node-id=0%3A1
 
@@ -12,12 +15,18 @@
 * Pensando no marketing, buscaremos elaborar um aplicativo que ajuda empresários que promovem festas a divulgarem seus eventos com local e data de uma forma que chegue até o público consumidor de forma simples e automática, onde o próprio consumidor vai buscar por isso.
 * Também pensando nos jovens e adultos que gostam de uma boa festa mas geralmente não sabem quando e onde vai acontecer e, se realmente mais pessoas irão, o que torna em teoria a festa mais “empolgante”.
 
-3- `IDEALIZAR:` Chuva de ideias: depois de definir o problema realize com seu grupo uma chuva de ideias, todas são válidas, um dos membros do grupo pode ficar encarregado de anotá-las. (4 ideias no mínimo).
+3- `IDEALIZAR:` Chuva de ideias: depois de definir o problema realize com seu grupo uma chuva de ideias, todas são válidas, um dos membros do grupo pode ficar encarregado de anotá-las.
 
 * O aplicativo será voltado para dois públicos: jovens/adultos e empresas
 * Será voltado para realizar marketing e vender ingressos de eventos no caso das empresas (funcionalidade paga)
 * Vai ser usado pelas pessoas para procurar por eventos na região.
 * Os eventos constarão: localização, data e hora, valor do ingresso (com opção de compra), número de pessoas que compraram ingresso, a atração da noite, estilo musical e contará com fotos do ambiente.
+
+## :hammer: Funcionalidades do projeto
+* `Cadastro de eventos`: cadastro dos eventos com nome, local, data, preço do ingresso e imagem.
+* `Uploads de imagens`: upload de imagem para os eventos.
+* `Exibição dos eventos cadastrados`: exibição na tela Home de todos os eventos cadastrados no banco de dados.
+* `Pesquisa de eventos`: opção de pesquisar eventos pelo nome.
 
 ## :hammer_and_wrench: Abrir e rodar o projeto
 Após baixar o projeto, você pode abrir com o Visual Studio Code. Para o projeto funcionar você deve ter configurado em seu PC:
@@ -42,3 +51,13 @@ Em outro terminal na raiz do projeto execute:
 * nodemon Controller
 
 Agora o projeto está pronto para uso. 
+
+## :heavy_check_mark: Tecnologias utilizadas
+* `Node.js - 16.14.2`
+* `Expo - 45.0.0`
+* `React Native - 0.68.2`
+* `Express - 4.18.1`
+* `Sequelize - 6.20.1`
+* `Nodemon - 2.0.16`
+* `MySQL`
+* `JavaScript`
