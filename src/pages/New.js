@@ -3,8 +3,8 @@ import { Text, View, StatusBar, TextInput, TouchableWithoutFeedback, Keyboard, T
 import { LinearGradient } from 'expo-linear-gradient';
 import config from "../../config/config.json";
 import MaskInput, { Masks } from 'react-native-mask-input';
-import { Feather } from '@expo/vector-icons';
-import * as ImagePicker from 'expo-image-picker';
+
+import { UploadImage } from '../components/PhotoComponent';
 
 
 import { styles } from '../assets/css/style';
@@ -18,6 +18,7 @@ export default function New() {
   const [price,setPrice]=useState(null);
   const [image,setImage]=useState(null);
   const [message,setMessage]=useState(null);
+  const [image, setImage] =useState(image)
 
   //Envia os dados do formulário para o backend
   async function registerEvent()
