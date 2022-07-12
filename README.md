@@ -43,6 +43,7 @@ Nos arquivos do projeto abra o arquivo config.json na pasta /config e edite as c
 Após abra um novo terminal na raiz do projeto e execute:
 
 * npm install
+* npm install -g nodemon
 * npx sequelize-cli db:migrate
 * expo start
 
