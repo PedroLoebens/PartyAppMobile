@@ -6,7 +6,6 @@ import { Feather } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 
 import { styles } from '../assets/css/style';
-import { Button } from 'react-native-paper';
 
 export default function New() {
   const goTop = React.useRef();
@@ -62,6 +61,11 @@ export default function New() {
       aspect: [8, 12],
       quality: 1,
     });
+    console.log(result);
+
+    if (!result.cancelled) {
+      setImage(result.uri);
+      // setBase64Image(result.base64);
     }
     // if(isImageSelector){
     //   return (
@@ -73,8 +77,6 @@ export default function New() {
     //   )
     // }
   };
-
- 
 
   return (
     <ScrollView ref={goTop} style={styles.scrollView}>
