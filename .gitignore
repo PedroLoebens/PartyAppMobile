@@ -1,5 +1,7 @@
 node_modules/
 .expo/
+.expo-shared/
+.vscode/
 dist/
 uploads/
 npm-debug.*

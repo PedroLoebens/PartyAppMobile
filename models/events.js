@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     place: DataTypes.STRING,
     date: DataTypes.STRING,
     price: DataTypes.STRING,
-    image: DataTypes.STRING
+    image: DataTypes.STRING.BINARY
   }, {
     sequelize,
     modelName: 'Events',
