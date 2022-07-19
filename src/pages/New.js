@@ -8,6 +8,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 
 import { styles } from '../assets/css/style';
+import { Button } from 'react-native-paper';
 
 export default function New() {
   const goTop = React.useRef();
@@ -17,6 +18,7 @@ export default function New() {
   const [date,setDate]=useState('');
   const [price,setPrice]=useState(null);
   const [image,setImage]=useState(null);
+  const [base64Image, setBase64Image]=useState('')
   const [message,setMessage]=useState(null);
 
   //Envia os dados do formulário para o backend
@@ -33,7 +35,7 @@ export default function New() {
             placeEvent: place,
             dateEvent: date,
             priceEvent: price,
-            imageEvent: image,
+            imageEvent: base64Image,
         })
     });
     let ress=await create.json();
@@ -62,17 +64,33 @@ export default function New() {
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
+      base64: true,
       allowsEditing: true,
       aspect: [8, 12],
       quality: 1,
     });
 
+    
+
     console.log(result);
+
 
     if (!result.cancelled) {
       setImage(result.uri);
+      setBase64Image(result.base64);
+    }
+    if(isImageSelector){
+      return (
+        <View>
+          <TouchableOpacity onPress={setImage = (null)}>
+            <Text style={styles.buttonConfirmText} >Excluir</Text>
+          </TouchableOpacity>
+        </View>
+      )
     }
   };
+
+ 
 
   return (
     <ScrollView ref={goTop} style={styles.scrollView}>
