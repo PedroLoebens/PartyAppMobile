@@ -11,9 +11,14 @@ app.use(bodyParser.json());
 
 //Routes
 app.post('/login',async(req,res)=>{
+  //Adiciona o nome e email digitado pelo usuário em variáveis.
+  const typedNameLogin = req.body.nameLogin;
+  //Remove espaços em branco do início ou do fim da string
+  const nameLogin = typedNameLogin.trim();
+
   let login = await model.User.findOne({
     where: {
-      name: req.body.nameLogin, 
+      name: nameLogin, 
     },
     raw:true
   });

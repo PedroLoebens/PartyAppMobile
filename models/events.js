@@ -14,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Events.init({
-    name: DataTypes.STRING,
-    place: DataTypes.STRING,
-    date: DataTypes.STRING,
-    price: DataTypes.STRING,
+    name: DataTypes.STRING(100),
+    place: DataTypes.STRING(150),
+    date: DataTypes.STRING(11),
+    price: DataTypes.STRING(30),
     image: DataTypes.STRING.BINARY
   }, {
     sequelize,
