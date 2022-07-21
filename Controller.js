@@ -14,32 +14,66 @@ app.post('/login',async(req,res)=>{
   let login = await model.User.findOne({
     where: {
       name: req.body.nameLogin, 
-      password: req.body.passwordLogin
     },
     raw:true
   });
+  //Armazena a senha cadastrada no banco em uma variável e a senha digitada pelo usuário em outra variável
+  const passwordDB = login.password;
+  const typedPassword = req.body.passwordLogin;
 
-  if(login !== null){
+  //Compara a senha digitada com o hash no banco.
+  const bcrypt = require('bcrypt');
+  const verifyPassword = bcrypt.compareSync(typedPassword, passwordDB);
+
+  if(login !== null && verifyPassword === true){
     res.send(JSON.stringify(1));
 
   }else{
     res.send(JSON.stringify('Usuário e/ou senha inválidos!'));
 
   }
-  // console.log(login);
 });
 
 app.post('/signup',async(req,res)=>{
-  let signUp = await model.User.create({
-    'name':req.body.nameUser,
-    'email':req.body.emailUser,
-    'password':req.body.passwordUser,
-    'createdAt':new Date(),
-    'updatedAt':new Date()
+  //Adiciona o nome e email digitado pelo usuário em variáveis.
+  const typedNameUser = req.body.nameUser;
+  const typedEmailUser = req.body.emailUser;
+  //Remove espaços em branco do início ou do fim da string
+  const nameUser = typedNameUser.trim();
+  const emailUser = typedEmailUser.trim();
+
+
+  //Requere o módulo bcrypt para a criptografia.
+  const bcrypt = require('bcrypt');
+
+  //Realiza a criptografia da senha do usuário.
+  const passwordUser = req.body.passwordUser;
+  const salt = bcrypt.genSaltSync(10);
+  const passwordHash = bcrypt.hashSync(passwordUser, salt);
+
+  //Verifica se já existe um usuário cadastrado com o mesmo nome e email informado pelo usuário.
+  let verifySignUp = await model.User.findOne({
+    where: {
+      [Op.or]: [{name: req.body.nameUser}, {email: req.body.emailUser}]
+    },
+    raw:true
   });
-  
-  if(signUp){
-    res.send(JSON.stringify('Usuário cadastrado com sucesso!'));
+
+  if(verifySignUp !== null) {
+    res.send(JSON.stringify(2));
+
+  }else {
+    let signUp = await model.User.create({
+      'name':nameUser,
+      'email':emailUser,
+      'password':passwordHash,
+      'createdAt':new Date(),
+      'updatedAt':new Date()
+    });
+
+    if(signUp){
+      res.send(JSON.stringify('Usuário cadastrado com sucesso!'));
+    }
   }
 });
 
@@ -50,11 +84,9 @@ app.get('/read', async (req,res)=>{
   });
 
   res.send(JSON.stringify(read));
-  // console.log(read);
 });
 
 app.post('/create',async(req,res)=>{
-  // console.log(req.body.nameEvent);
   let create = await model.Events.create({
     'name':req.body.nameEvent,
     'place':req.body.placeEvent,
@@ -74,15 +106,23 @@ app.post('/search', async (req,res)=>{
   let resulSearch = await model.Events.findAll({
     attributes: ['id', 'image', 'name', 'place', 'date', 'price'],
     where: {
-        name: {
-            [Op.substring]: req.body.searchEvent,
+      [Op.or]: [
+        {
+          name: {
+          [Op.substring]: req.body.searchEvent,
+          }
+        }, 
+        {
+          place: {
+          [Op.substring]: req.body.searchEvent,
+          }
         }
+      ], 
     },
     raw:true
   });
 
   res.send(JSON.stringify(resulSearch));
-  // console.log(resulSearch);
 });
 
 //Start e status server

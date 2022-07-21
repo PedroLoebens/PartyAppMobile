@@ -9,7 +9,9 @@ export default function Register()
   const [name,setName]=useState(null);
   const [email,setEmail]=useState(null);
   const [password,setPassword]=useState(null);
+  
   const [message,setMessage]=useState(null);
+  const [messageError,setMessageError]=useState(null);
 
   //Envia os dados do formulário para o backend
   async function signUpUser()
@@ -26,8 +28,12 @@ export default function Register()
           passwordUser: password
       })
     });
-    let ress=await signUp.json();
-    setMessage(ress);
+    let ress = await signUp.json();
+    if (ress === 2) {
+      setMessageError('Nome de usuário e/ou email já cadastrados. Escolha outro!');
+    }else {
+      setMessage(ress);
+    }
 
     setName({
       name: '',
@@ -51,6 +57,7 @@ export default function Register()
 
         <Text style={styles.titleSignUp}>Registro</Text>
         {message && ( <Text style={styles.message}>{message}</Text> )}
+        {messageError && ( <Text style={styles.messageError}>{messageError}</Text> )}
         
         <View style={styles.containerInputs}>
           <Text style={styles.label}>Nome de usuário:</Text>
