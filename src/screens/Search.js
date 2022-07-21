@@ -44,7 +44,7 @@ export default function Search() {
 
         <View style={styles.containerInputs}>
           <Text style={styles.label}>Buscar evento:</Text>
-          <TextInput style={styles.input} placeholder="Digite o nome do evento" onChangeText={(text)=>setSearch(text)} value={search}/>
+          <TextInput style={styles.input} placeholder="Digite o nome ou local do evento" onChangeText={(text)=>setSearch(text)} value={search}/>
 
           <TouchableOpacity style={styles.standardButton} onPress={newSearch}>
              <Text style={styles.standardButtonText}>Buscar</Text>
