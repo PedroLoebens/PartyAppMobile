@@ -22,9 +22,10 @@ export default function Search() {
         searchEvent: search,
       })
     });
-    const ResulResearches=await resulSearch.json();
-    setResulResearches(ResulResearches);
 
+    const ResulResearches = await resulSearch.json();
+    setResulResearches(ResulResearches);
+    
     setSearch({
       search: '',
     });

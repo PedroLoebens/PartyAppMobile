@@ -31,8 +31,9 @@ export default function Register()
     let ress = await signUp.json();
     if (ress === 2) {
       setMessageError('Nome de usuário e/ou email já cadastrados. Escolha outro!');
+
     }else {
-      setMessage(ress);
+      setMessage('Usuário cadastrado com sucesso!');
     }
 
     setName({

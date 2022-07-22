@@ -17,6 +17,7 @@ export default function New() {
   const [image,setImage]=useState(null);
   // const [base64Image, setBase64Image]=useState('');
   const [message,setMessage]=useState(null);
+  const [messageError,setMessageError]=useState(null);
 
   //Envia os dados do formulário para o backend
   async function registerEvent()
@@ -36,8 +37,14 @@ export default function New() {
           imageEvent: image,
       })
     });
-    let ress=await create.json();
-    setMessage(ress);
+    let ress = await create.json();
+    if (ress === 1) {
+      setMessage('O evento foi cadastrado com sucesso!');
+      
+    }else {
+      setMessageError('Não foi possível cadastrar o evento!');
+    }
+    
 
     goTop.current.scrollTo({
       x: 0,
@@ -90,6 +97,7 @@ export default function New() {
 
           <Text style={styles.title}>Novo Evento</Text>
           {message && ( <Text style={styles.message}>{message}</Text> )}
+          {messageError && ( <Text style={styles.messageError}>{messageError}</Text> )}
 
           <View style={styles.containerInputs}>
             <Text style={styles.label}>Nome do Evento:</Text>
