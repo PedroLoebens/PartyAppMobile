@@ -14,8 +14,8 @@ export default function New() {
   const [place,setPlace]=useState(null);
   const [date,setDate]=useState('');
   const [price,setPrice]=useState(null);
-  const [image,setImage]=useState(null);
-  // const [base64Image, setBase64Image]=useState('');
+  // const [image,setImage]=useState(null);
+  const [base64Image, setBase64Image]=useState('');
   const [message,setMessage]=useState(null);
   const [messageError,setMessageError]=useState(null);
 
@@ -33,8 +33,8 @@ export default function New() {
           placeEvent: place,
           dateEvent: date,
           priceEvent: price,
-          // imageEvent: base64Image,
-          imageEvent: image,
+          imageEvent: base64Image,
+          // imageEvent: image,
       })
     });
     let ress = await create.json();
@@ -44,8 +44,7 @@ export default function New() {
     }else {
       setMessageError('Não foi possível cadastrar o evento!');
     }
-    
-
+  
     goTop.current.scrollTo({
       x: 0,
       y: 0,
@@ -63,7 +62,7 @@ export default function New() {
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
-      // base64: true,
+      base64: true,
       allowsEditing: true,
       aspect: [8, 12],
       quality: 1,
@@ -71,18 +70,18 @@ export default function New() {
     console.log(result);
 
     if (!result.cancelled) {
-      setImage(result.uri);
-      // setBase64Image(result.base64);
+      // setImage(result.uri);
+      setBase64Image(result.base64);
     }
-    // if(isImageSelector){
-    //   return (
-    //     <View>
-    //       <TouchableOpacity onPress={setImage = (null)}>
-    //         <Text style={styles.buttonConfirmText} >Excluir</Text>
-    //       </TouchableOpacity>
-    //     </View>
-    //   )
-    // }
+    if(isImageSelector){
+      return (
+        <View>
+          <TouchableOpacity onPress={setImage = (null)}>
+            <Text style={styles.buttonConfirmText} >Excluir</Text>
+          </TouchableOpacity>
+        </View>
+      )
+    }
   };
 
   return (
@@ -130,7 +129,7 @@ export default function New() {
               <Text style={styles.textBtnUpload}><Feather name="upload" size={15} />  Procurar Imagem</Text>
             </TouchableOpacity>
 
-            {image && <Image onChangeText={(text)=>setImage(text)} source={{ uri: image }} style={styles.imagePreview} />}
+            {/* {image && <Image onChangeText={(text)=>setImage(text)} source={{ uri: image }} style={styles.imagePreview} />} */}
 
             <TouchableOpacity style={styles.standardButtonNew} onPress={registerEvent}>
                <Text style={styles.standardButtonText}>Confirmar</Text>
