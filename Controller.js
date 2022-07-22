@@ -22,21 +22,27 @@ app.post('/login',async(req,res)=>{
     },
     raw:true
   });
-  //Armazena a senha cadastrada no banco em uma variável e a senha digitada pelo usuário em outra variável
-  const passwordDB = login.password;
-  const typedPasswordLogin = req.body.passwordLogin;
-  const passwordLogin = typedPasswordLogin.trim();
-
-  //Compara a senha digitada com o hash no banco.
-  const bcrypt = require('bcrypt');
-  const verifyPassword = bcrypt.compareSync(passwordLogin, passwordDB);
-
-  if(login !== null && verifyPassword === true){
-    res.send(JSON.stringify(1));
-
-  }else{
+  
+  if (login === null) {
     res.send(JSON.stringify('Usuário e/ou senha inválidos!'));
 
+  }else {
+    //Armazena a senha cadastrada no banco em uma variável e a senha digitada pelo usuário em outra variável
+    const passwordDB = login.password;
+    const typedPasswordLogin = req.body.passwordLogin;
+    const passwordLogin = typedPasswordLogin.trim();
+
+    //Compara a senha digitada com o hash no banco.
+    const bcrypt = require('bcrypt');
+    const verifyPassword = bcrypt.compareSync(passwordLogin, passwordDB);
+
+    if(verifyPassword === true){
+      res.send(JSON.stringify(1));
+
+    }else{
+      res.send(JSON.stringify('Usuário e/ou senha inválidos!'));
+
+    }
   }
 });
 
