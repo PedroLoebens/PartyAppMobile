@@ -14,10 +14,24 @@ const styles = StyleSheet.create({
       paddingRight: 16,
       paddingTop: 40,
    },
+   containerHeader: {
+      flex: 1,
+      backgroundColor: '#ffffff',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      paddingLeft: 16,
+      paddingRight: 16,
+   },
    title: {
       fontSize: 36,
       fontFamily: 'Comfortaa_400Regular',
       lineHeight: 40,
+   },
+   titleSignUp: {
+      fontSize: 36,
+      fontFamily: 'Comfortaa_400Regular',
+      lineHeight: 40,
+      marginTop: 12,
    },
    subtitle: {
       fontSize: 13,
@@ -26,6 +40,42 @@ const styles = StyleSheet.create({
       paddingTop: 12,
       lineHeight: 15,
       textTransform: 'uppercase',
+   },
+   standardButton: {
+      width: 300,
+      borderRadius: 5,
+      backgroundColor: '#000000'
+   },
+   standardButtonNew: {
+      width: 300,
+      borderRadius: 5,
+      backgroundColor: '#000000',
+      marginBottom: 25,
+   },
+   standardButtonText: {
+      fontSize: 14,
+      fontFamily: 'Roboto_400Regular',
+      textAlign: 'center',
+      textAlignVertical: 'center',
+      textTransform: 'uppercase',
+      color: '#ffffff',
+      textAlign: 'center',
+      textAlignVertical: 'center',
+      paddingTop: 12,
+      paddingBottom: 12,
+   },
+
+   // Página Login 
+   btnRegister: {
+      marginTop: 25,
+      textAlign: 'center',
+      alignItems: "center",
+   },
+
+   textBtnRegister: {
+      fontFamily: 'Comfortaa_400Regular',
+      fontSize: 14,
+      color: '#000000'
    },
 
    // Label e input page New e Search
@@ -42,7 +92,7 @@ const styles = StyleSheet.create({
       borderWidth: 2,
       borderColor: "#000000",
       backgroundColor: '#ffffff',
-      padding: 10,
+      padding: 8,
       marginBottom: 18,
       width: 300
    },
@@ -125,9 +175,19 @@ const styles = StyleSheet.create({
       fontSize: 13,
       padding: 10,
    },
+   buttonContainer: {
+      flexDirection: 'row',
+   },
    btnUpdate: {
       marginTop: 15,
-   }, 
+      width: '50%',
+   },
+   btnLogOut: {
+      marginTop: 15,
+      textAlign: 'right',
+      alignItems: 'flex-end',
+      width: '50%',
+   },  
    textBtnUpdate: {
       fontFamily: 'Comfortaa_400Regular',
       fontSize: 14,
@@ -145,6 +205,30 @@ const styles = StyleSheet.create({
       padding: 15,
       textAlign: 'center',
       alignSelf: 'center',
+   },
+   // messageError:(text='none')=>({
+   //    fontSize: 15,
+   //    color: '#842029',
+   //    fontFamily: 'Comfortaa_400Regular',
+   //    backgroundColor: '#f8d7da',
+   //    borderRadius: 8,
+   //    marginTop: 25,
+   //    padding: 15,
+   //    textAlign: 'center',
+   //    alignSelf: 'center',
+   //    display: text,
+   // }),
+   messageError: {
+      fontSize: 15,
+      color: '#842029',
+      fontFamily: 'Comfortaa_400Regular',
+      backgroundColor: '#f8d7da',
+      borderRadius: 8,
+      marginTop: 25,
+      padding: 15,
+      textAlign: 'center',
+      alignSelf: 'center',
+      width: 300,
    },
    btnUpload: {
       marginTop: 4,

@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, StatusBar, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { ButtonBuyTicket } from '../components/ButtonBuyTicket';
 import { Feather } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import config from "../../config/config.json";
 
 import { styles } from '../assets/css/style';
 
-export default function Home() {
+export default function Home({navigation}) {
   async function loadingEvents()
   {
     let read = await fetch(config.urlRootNode+'read',{
@@ -17,9 +18,26 @@ export default function Home() {
   }
   const [Events,setEvents]=useState();
 
+  async function logOut()
+  {
+    await AsyncStorage.clear();
+    navigation.navigate('Login');
+  }
+
   useEffect(()=>{
     loadingEvents();
   },[]);
+  
+  // const [user,setUser]=useState(null);
+  // useEffect(()=>{
+  //   async function getUser()
+  //   {
+  //       let ress = await AsyncStorage.getItem('userData');
+  //       let login = JSON.parse(ress);
+  //       setUser(login.name);
+  //   }
+  //   getUser();
+  // },[]);
 
   return (
     <ScrollView style={styles.scrollView}>
@@ -31,11 +49,17 @@ export default function Home() {
         />
         
         <Text style={styles.titleHome}>Festas ao redor</Text>
-        <Text style={styles.subtitle}>Encontre o melhor para você</Text>
+        <Text style={styles.subtitle}>Encontre o melhor para você {/*{user}*/}</Text>
 
-        <TouchableOpacity style={styles.btnUpdate} onPress={loadingEvents}>
-          <Text style={styles.textBtnUpdate}><Feather name="refresh-ccw" size={15} />   Atualizar Eventos</Text>
-        </TouchableOpacity> 
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.btnUpdate} onPress={loadingEvents}>
+            <Text style={styles.textBtnUpdate}><Feather name="refresh-ccw" size={15} />  Atualizar Eventos</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity style={styles.btnLogOut} onPress={logOut}>
+            <Text style={styles.textBtnUpdate}><Feather name="log-out" size={15} />  Sair</Text>
+          </TouchableOpacity>
+        </View>
 
         {Events?.map((event) => (
           <View style={styles.containerEvents}>

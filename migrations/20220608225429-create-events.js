@@ -9,19 +9,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100)
       },
       place: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(150)
       },
       date: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(11)
       },
       price: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(30)
       },
       image: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING.BINARY
       },
       createdAt: {
         allowNull: false,

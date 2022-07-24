@@ -12,11 +12,13 @@
   "dependencies": {
     "@expo-google-fonts/comfortaa": "^0.2.2",
     "@expo-google-fonts/roboto": "^0.2.2",
+    "@react-native-async-storage/async-storage": "^1.17.7",
     "@react-navigation/bottom-tabs": "^6.3.1",
     "@react-navigation/material-bottom-tabs": "^6.2.1",
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",
     "@react-navigation/stack": "^6.2.1",
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "expo": "~45.0.0",

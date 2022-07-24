@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StatusBar, TextInput, TouchableWithoutFeedback, Keyboard, TouchableOpacity, ScrollView, Image} from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import config from "../../config/config.json";
 import MaskInput, { Masks } from 'react-native-mask-input';
 import { Feather } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 
-
 import { styles } from '../assets/css/style';
-import { Button } from 'react-native-paper';
 
 export default function New() {
   const goTop = React.useRef();
@@ -17,30 +14,37 @@ export default function New() {
   const [place,setPlace]=useState(null);
   const [date,setDate]=useState('');
   const [price,setPrice]=useState(null);
-  const [image,setImage]=useState(null);
-  const [base64Image, setBase64Image]=useState('')
+  // const [image,setImage]=useState(null);
+  const [base64Image, setBase64Image]=useState('');
   const [message,setMessage]=useState(null);
+  const [messageError,setMessageError]=useState(null);
 
   //Envia os dados do formulário para o backend
   async function registerEvent()
   {
     let create = await fetch(config.urlRootNode+'create',{
-        method: 'POST',
-        headers:{
-            'Accept':'application/json',
-            'Content-Type':'application/json',
-        },
-        body: JSON.stringify({
-            nameEvent: name,
-            placeEvent: place,
-            dateEvent: date,
-            priceEvent: price,
-            imageEvent: base64Image,
-        })
+      method: 'POST',
+      headers:{
+          'Accept':'application/json',
+          'Content-Type':'application/json',
+      },
+      body: JSON.stringify({
+          nameEvent: name,
+          placeEvent: place,
+          dateEvent: date,
+          priceEvent: price,
+          imageEvent: base64Image,
+          // imageEvent: image,
+      })
     });
-    let ress=await create.json();
-    setMessage(ress);
-
+    let ress = await create.json();
+    if (ress === 1) {
+      setMessage('O evento foi cadastrado com sucesso!');
+      
+    }else {
+      setMessageError('Não foi possível cadastrar o evento!');
+    }
+  
     goTop.current.scrollTo({
       x: 0,
       y: 0,
@@ -53,12 +57,6 @@ export default function New() {
     setPlace({
       place: '',
     });
-    // setDate({
-    //   date: '',
-    // });
-    // setPrice({
-    //   price: '',
-    // });
   }
 
   const pickImage = async () => {
@@ -69,14 +67,10 @@ export default function New() {
       aspect: [8, 12],
       quality: 1,
     });
-
-    
-
     console.log(result);
 
-
     if (!result.cancelled) {
-      setImage(result.uri);
+      // setImage(result.uri);
       setBase64Image(result.base64);
     }
     if(isImageSelector){
@@ -90,8 +84,6 @@ export default function New() {
     }
   };
 
- 
-
   return (
     <ScrollView ref={goTop} style={styles.scrollView}>
       <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>
@@ -103,9 +95,9 @@ export default function New() {
           />
 
           <Text style={styles.title}>Novo Evento</Text>
-          {message && (
-              <Text style={styles.message}>{message}</Text>
-          )}
+          {message && ( <Text style={styles.message}>{message}</Text> )}
+          {messageError && ( <Text style={styles.messageError}>{messageError}</Text> )}
+
           <View style={styles.containerInputs}>
             <Text style={styles.label}>Nome do Evento:</Text>
             <TextInput style={styles.input} placeholder="Digite o nome do evento" onChangeText={(text)=>setName(text)} value={name}/>
@@ -132,17 +124,16 @@ export default function New() {
             />
 
             <Text style={styles.label}>Escolha uma Imagem:</Text>
+
             <TouchableOpacity style={styles.btnUpload} onPress={pickImage}>
-              <Text style={styles.textBtnUpload}><Feather name="upload" size={15} />   Procurar Imagem</Text>
+              <Text style={styles.textBtnUpload}><Feather name="upload" size={15} />  Procurar Imagem</Text>
             </TouchableOpacity>
-            {image && <Image onChangeText={(text)=>setImage(text)} source={{ uri: image }} style={styles.imagePreview} />}
 
-            <LinearGradient colors={[ '#00e3ae', '#9be15d' ]} locations={[0, 1]} style={styles.gradientBtnConfirm} start={{ x: 1, y: 1 }} end={{ x: 0, y: 0 }}>
-              <TouchableOpacity onPress={registerEvent}>
-                 <Text style={styles.buttonConfirmText}>Confirmar</Text>
-              </TouchableOpacity> 
-           </LinearGradient>
+            {/* {image && <Image onChangeText={(text)=>setImage(text)} source={{ uri: image }} style={styles.imagePreview} />} */}
 
+            <TouchableOpacity style={styles.standardButtonNew} onPress={registerEvent}>
+               <Text style={styles.standardButtonText}>Confirmar</Text>
+            </TouchableOpacity> 
           </View>
         </View>
       </TouchableWithoutFeedback>
