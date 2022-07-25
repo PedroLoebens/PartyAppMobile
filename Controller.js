@@ -2,6 +2,7 @@
 //1 = sucesso
 //2 = erro
 
+//Constantes
 const { Op } = require("sequelize");
 const express=require('express');
 const bodyParser=require('body-parser');
@@ -12,6 +13,12 @@ let app=express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ limit: '5mb', extended: true }));
 app.use(bodyParser.json({ limit: '5mb' }));
+
+//Status e porta do server
+let port = process.env.PORT || 3000;
+app.listen(port,(req,res)=>{
+  console.log('Servidor Rodando na Porta', port);
+});
 
 //Routes
 app.post('/login',async(req,res)=>{
@@ -150,10 +157,4 @@ app.post('/search', async (req,res)=>{
   });
 
   res.send(JSON.stringify(resulSearch));
-});
-
-//Status e porta do server
-let port = 3000;
-app.listen(port,(req,res)=>{
-  console.log('Servidor Rodando na Porta', port);
 });
