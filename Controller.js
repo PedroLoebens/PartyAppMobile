@@ -11,8 +11,8 @@ const model=require('./models');
 
 let app=express();
 app.use(cors());
-app.use(bodyParser.urlencoded({ limit: '5mb', extended: true }));
-app.use(bodyParser.json({ limit: '5mb' }));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
+app.use(bodyParser.json({ limit: '10mb' }));
 
 //Status e porta do server
 let port = process.env.PORT || 3000;
