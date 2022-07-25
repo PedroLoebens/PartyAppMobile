@@ -1,12 +1,12 @@
+//Códigos das mensagens:
+//1 = sucesso
+//2 = erro
+
 const { Op } = require("sequelize");
 const express=require('express');
 const bodyParser=require('body-parser');
 const cors=require('cors');
 const model=require('./models');
-
-// const fs = require('fs');
-// const multer = require('multer');
-// const upload = multer({ dest: 'uploads/' });
 
 let app=express();
 app.use(cors());
