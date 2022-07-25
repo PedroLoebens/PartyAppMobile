@@ -29,16 +29,16 @@ export default function Home({navigation}) {
     loadingEvents();
   },[]);
   
-  // const [user,setUser]=useState(null);
-  // useEffect(()=>{
-  //   async function getUser()
-  //   {
-  //       let ress = await AsyncStorage.getItem('userData');
-  //       let login = JSON.parse(ress);
-  //       setUser(login.name);
-  //   }
-  //   getUser();
-  // },[]);
+  const [user,setUser]=useState(null);
+  useEffect(()=>{
+    async function getUser()
+    {
+        let ress = await AsyncStorage.getItem('userData');
+        let data = JSON.parse(ress);
+        setUser(data);
+    }
+    getUser();
+  },[]);
 
   return (
     <ScrollView style={styles.scrollView}>
@@ -50,7 +50,7 @@ export default function Home({navigation}) {
         />
         
         <Text style={styles.titleHome}>Festas ao redor</Text>
-        <Text style={styles.subtitle}>Encontre o melhor para você {/*{user}*/}</Text>
+        <Text style={styles.subtitle}>Encontre o melhor para você {user}</Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.btnUpdate} onPress={loadingEvents}>

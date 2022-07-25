@@ -7,7 +7,7 @@ import config from "../../config/config.json";
 import { styles } from '../assets/css/style.js';
 
 export default function Login({navigation}) {
-  const [name,setName]=useState(null);
+  const [name,setName]=useState('');
   const [password,setPassword]=useState(null);
 
   const [messageError,setMessageError]=useState(null);
@@ -30,12 +30,7 @@ export default function Login({navigation}) {
     //Recebe a resposta do servidor e decide se direciona para página home ou mostra mensgem de erro
     let ress = await login.json();
 
-    if (ress === 1) { 
-      await AsyncStorage.setItem('userData', JSON.stringify(ress));
-      // let resData = await AsyncStorage.getItem('userData');
-      // console.log(resData);
-      navigation.navigate('Home');
-    }else {
+    if (ress === 'Usuário e/ou senha inválidos!') { 
       await AsyncStorage.clear();
       setMessageError(ress);
       
@@ -43,6 +38,12 @@ export default function Login({navigation}) {
       setTimeout(()=>{
           setDisplay('none');
       },5000);
+
+    }else {
+      await AsyncStorage.setItem('userData', JSON.stringify(ress));
+      await AsyncStorage.getItem('userData');
+
+      navigation.navigate('Home');
     }
 
     setPassword({

@@ -40,12 +40,11 @@ app.post('/login',async(req,res)=>{
     const bcrypt = require('bcrypt');
     const verifyPassword = bcrypt.compareSync(passwordLogin, passwordDB);
 
-    if(verifyPassword === true){
-      res.send(JSON.stringify(1));
-
-    }else{
+    if(verifyPassword === false){
       res.send(JSON.stringify('Usuário e/ou senha inválidos!'));
 
+    }else{
+      res.send(JSON.stringify(nameLogin));
     }
   }
 });
