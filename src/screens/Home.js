@@ -8,6 +8,8 @@ import config from "../../config/config.json";
 import { styles } from '../assets/css/style';
 
 export default function Home({navigation}) {
+  const [Events,setEvents]=useState();
+  
   async function loadingEvents()
   {
     let read = await fetch(config.urlRootNode+'read',{
@@ -16,7 +18,6 @@ export default function Home({navigation}) {
     const Events=await read.json();
     setEvents(Events);
   }
-  const [Events,setEvents]=useState();
 
   async function logOut()
   {

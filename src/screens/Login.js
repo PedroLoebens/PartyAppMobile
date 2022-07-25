@@ -7,9 +7,11 @@ import config from "../../config/config.json";
 import { styles } from '../assets/css/style.js';
 
 export default function Login({navigation}) {
-  const [message,setMessage]=useState(null);
   const [name,setName]=useState(null);
   const [password,setPassword]=useState(null);
+
+  const [messageError,setMessageError]=useState(null);
+  const [display, setDisplay]=useState('none');
 
   //Envia os dados do formulário para o backend
   async function loginUser()
@@ -35,7 +37,12 @@ export default function Login({navigation}) {
       navigation.navigate('Home');
     }else {
       await AsyncStorage.clear();
-      setMessage(ress);
+      setMessageError(ress);
+      
+      setDisplay('flex');
+      setTimeout(()=>{
+          setDisplay('none');
+      },5000);
     }
 
     setPassword({
@@ -53,7 +60,7 @@ export default function Login({navigation}) {
         />
 
         <Text style={styles.title}>Login</Text>
-        {message && ( <Text style={styles.messageError}>{message}</Text> )}
+        {messageError && ( <Text style={styles.messageError(display)}>{messageError}</Text> )}
 
         <View style={styles.containerInputs}>
           <Text style={styles.label}>Nome de usuário:</Text>

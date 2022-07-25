@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
    },
    
    // Page New
-   message: {
+   message:(text='none')=>({
       fontSize: 15,
       color: '#0f5132',
       fontFamily: 'Comfortaa_400Regular',
@@ -205,20 +205,9 @@ const styles = StyleSheet.create({
       padding: 15,
       textAlign: 'center',
       alignSelf: 'center',
-   },
-   // messageError:(text='none')=>({
-   //    fontSize: 15,
-   //    color: '#842029',
-   //    fontFamily: 'Comfortaa_400Regular',
-   //    backgroundColor: '#f8d7da',
-   //    borderRadius: 8,
-   //    marginTop: 25,
-   //    padding: 15,
-   //    textAlign: 'center',
-   //    alignSelf: 'center',
-   //    display: text,
-   // }),
-   messageError: {
+      display: text
+   }),
+   messageError:(text='none')=>({
       fontSize: 15,
       color: '#842029',
       fontFamily: 'Comfortaa_400Regular',
@@ -229,7 +218,8 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       alignSelf: 'center',
       width: 300,
-   },
+      display: text
+   }),
    btnUpload: {
       marginTop: 4,
       marginBottom: 20,

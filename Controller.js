@@ -4,10 +4,14 @@ const bodyParser=require('body-parser');
 const cors=require('cors');
 const model=require('./models');
 
+// const fs = require('fs');
+// const multer = require('multer');
+// const upload = multer({ dest: 'uploads/' });
+
 let app=express();
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit: '5mb', extended: true }));
+app.use(bodyParser.json({ limit: '5mb' }));
 
 //Routes
 app.post('/login',async(req,res)=>{
