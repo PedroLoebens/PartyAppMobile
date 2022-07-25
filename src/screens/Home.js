@@ -29,6 +29,7 @@ export default function Home({navigation}) {
     loadingEvents();
   },[]);
   
+  //Retorna os dados do AsyncStorage
   const [user,setUser]=useState(null);
   useEffect(()=>{
     async function getUser()

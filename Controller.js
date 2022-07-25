@@ -28,7 +28,7 @@ app.post('/login',async(req,res)=>{
   });
   
   if (login === null) {
-    res.send(JSON.stringify('Usuário e/ou senha inválidos!'));
+    res.send(JSON.stringify(2));
 
   }else {
     //Armazena a senha cadastrada no banco em uma variável e a senha digitada pelo usuário em outra variável
@@ -41,7 +41,7 @@ app.post('/login',async(req,res)=>{
     const verifyPassword = bcrypt.compareSync(passwordLogin, passwordDB);
 
     if(verifyPassword === false){
-      res.send(JSON.stringify('Usuário e/ou senha inválidos!'));
+      res.send(JSON.stringify(2));
 
     }else{
       res.send(JSON.stringify(nameLogin));

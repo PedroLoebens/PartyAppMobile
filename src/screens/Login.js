@@ -30,9 +30,9 @@ export default function Login({navigation}) {
     //Recebe a resposta do servidor e decide se direciona para página home ou mostra mensgem de erro
     let ress = await login.json();
 
-    if (ress === 'Usuário e/ou senha inválidos!') { 
+    if (ress === 2) { 
       await AsyncStorage.clear();
-      setMessageError(ress);
+      setMessageError('Usuário e/ou senha inválidos!');
       
       setDisplay('flex');
       setTimeout(()=>{
