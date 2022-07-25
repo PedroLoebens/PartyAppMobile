@@ -45,9 +45,9 @@ export default function New() {
       setMessage('O evento foi cadastrado com sucesso!');
 
       setDisplay('flex');
-      setTimeout(()=>{
-          setDisplay('none');
-      },5000);
+      // setTimeout(()=>{
+      //     setDisplay('none');
+      // },5000);
 
     }else {
       setMessageError('Não foi possível cadastrar o evento!');
@@ -84,6 +84,7 @@ export default function New() {
 
     if (!result.cancelled) {
       // const imageBase64 = await FileSystem.readAsStringAsync(result.uri, { encoding: 'base64' });
+      // setImage(imageBase64);
       setImage(result.uri);
 
       // setBase64Image(result.base64);
