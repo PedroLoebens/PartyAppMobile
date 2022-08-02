@@ -21,6 +21,7 @@
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
+    "escape-html": "^1.0.3",
     "expo": "~45.0.0",
     "expo-app-loading": "~2.0.0",
     "expo-dev-client": "~1.0.0",

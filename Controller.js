@@ -8,6 +8,7 @@ const express=require('express');
 const bodyParser=require('body-parser');
 const cors=require('cors');
 const model=require('./models');
+const escape = require('escape-html');
 
 let app=express();
 app.use(cors());
@@ -51,7 +52,7 @@ app.post('/login',async(req,res)=>{
       res.send(JSON.stringify(2));
 
     }else{
-      res.send(JSON.stringify(nameLogin));
+      res.send(JSON.stringify(escape(nameLogin)));
     }
   }
 });
