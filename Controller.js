@@ -1,13 +1,25 @@
+//Códigos das mensagens:
+//1 = sucesso
+//2 = erro
+
+//Constantes
 const { Op } = require("sequelize");
 const express=require('express');
 const bodyParser=require('body-parser');
 const cors=require('cors');
 const model=require('./models');
+const escape = require('escape-html');
 
 let app=express();
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
+app.use(bodyParser.json({ limit: '10mb' }));
+
+//Status e porta do server
+let port = process.env.PORT || 3000;
+app.listen(port,(req,res)=>{
+  console.log('Servidor Rodando na Porta', port);
+});
 
 //Routes
 app.post('/login',async(req,res)=>{
@@ -24,7 +36,7 @@ app.post('/login',async(req,res)=>{
   });
   
   if (login === null) {
-    res.send(JSON.stringify('Usuário e/ou senha inválidos!'));
+    res.send(JSON.stringify(2));
 
   }else {
     //Armazena a senha cadastrada no banco em uma variável e a senha digitada pelo usuário em outra variável
@@ -36,12 +48,11 @@ app.post('/login',async(req,res)=>{
     const bcrypt = require('bcrypt');
     const verifyPassword = bcrypt.compareSync(passwordLogin, passwordDB);
 
-    if(verifyPassword === true){
-      res.send(JSON.stringify(1));
+    if(verifyPassword === false){
+      res.send(JSON.stringify(2));
 
     }else{
-      res.send(JSON.stringify('Usuário e/ou senha inválidos!'));
-
+      res.send(JSON.stringify(escape(nameLogin)));
     }
   }
 });
@@ -147,10 +158,4 @@ app.post('/search', async (req,res)=>{
   });
 
   res.send(JSON.stringify(resulSearch));
-});
-
-//Status e porta do server
-let port = 3000;
-app.listen(port,(req,res)=>{
-  console.log('Servidor Rodando na Porta', port);
 });

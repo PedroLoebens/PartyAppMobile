@@ -7,9 +7,11 @@ import config from "../../config/config.json";
 import { styles } from '../assets/css/style.js';
 
 export default function Login({navigation}) {
-  const [message,setMessage]=useState(null);
-  const [name,setName]=useState(null);
+  const [name,setName]=useState('');
   const [password,setPassword]=useState(null);
+
+  const [messageError,setMessageError]=useState(null);
+  const [display, setDisplay]=useState('none');
 
   //Envia os dados do formulário para o backend
   async function loginUser()
@@ -28,14 +30,20 @@ export default function Login({navigation}) {
     //Recebe a resposta do servidor e decide se direciona para página home ou mostra mensgem de erro
     let ress = await login.json();
 
-    if (ress === 1) { 
-      await AsyncStorage.setItem('userData', JSON.stringify(ress));
-      // let resData = await AsyncStorage.getItem('userData');
-      // console.log(resData);
-      navigation.navigate('Home');
-    }else {
+    if (ress === 2) { 
       await AsyncStorage.clear();
-      setMessage(ress);
+      setMessageError('Usuário e/ou senha inválidos!');
+      
+      setDisplay('flex');
+      setTimeout(()=>{
+          setDisplay('none');
+      },5000);
+
+    }else {
+      await AsyncStorage.setItem('userData', JSON.stringify(ress));
+      await AsyncStorage.getItem('userData');
+
+      navigation.navigate('Home');
     }
 
     setPassword({
@@ -53,7 +61,7 @@ export default function Login({navigation}) {
         />
 
         <Text style={styles.title}>Login</Text>
-        {message && ( <Text style={styles.messageError}>{message}</Text> )}
+        {messageError && ( <Text style={styles.messageError(display)}>{messageError}</Text> )}
 
         <View style={styles.containerInputs}>
           <Text style={styles.label}>Nome de usuário:</Text>

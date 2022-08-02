@@ -12,6 +12,7 @@ export default function Register()
   
   const [message,setMessage]=useState(null);
   const [messageError,setMessageError]=useState(null);
+  const [display, setDisplay]=useState('none');
 
   //Envia os dados do formulário para o backend
   async function signUpUser()
@@ -32,8 +33,18 @@ export default function Register()
     if (ress === 2) {
       setMessageError('Nome de usuário e/ou email já cadastrados. Escolha outro!');
 
+      setDisplay('flex');
+      setTimeout(()=>{
+          setDisplay('none');
+      },5000);
+
     }else {
       setMessage('Usuário cadastrado com sucesso!');
+
+      setDisplay('flex');
+      setTimeout(()=>{
+          setDisplay('none');
+      },5000);
     }
 
     setName({
@@ -57,8 +68,8 @@ export default function Register()
         />
 
         <Text style={styles.titleSignUp}>Registro</Text>
-        {message && ( <Text style={styles.message}>{message}</Text> )}
-        {messageError && ( <Text style={styles.messageError}>{messageError}</Text> )}
+        {message && ( <Text style={styles.message(display)}>{message}</Text> )}
+        {messageError && ( <Text style={styles.messageError(display)}>{messageError}</Text> )}
         
         <View style={styles.containerInputs}>
           <Text style={styles.label}>Nome de usuário:</Text>

@@ -53,7 +53,7 @@ Em outro terminal na raiz do projeto execute:
 
 Agora o projeto está pronto para uso. 
 
-## :heavy_check_mark: Tecnologias utilizadas
+## :white_check_mark: Tecnologias utilizadas
 * `Node.js - 16.14.2`
 * `Expo - 45.0.0`
 * `React Native - 0.68.2`
