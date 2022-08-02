@@ -24,8 +24,9 @@
 
 ## :hammer: Funcionalidades do projeto
 * `Cadastro de eventos`: cadastro dos eventos com nome, local, data, preço do ingresso e imagem.
-* `Uploads de imagens`: upload de imagem para os eventos.
+<!-- * `Uploads de imagens`: upload de imagem para os eventos. -->
 * `Exibição dos eventos cadastrados`: exibição na tela Home de todos os eventos cadastrados no banco de dados.
+  
 * `Pesquisa de eventos`: opção de pesquisar eventos pelo nome.
 
 ## :hammer_and_wrench: Abrir e rodar o projeto
