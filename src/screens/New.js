@@ -83,9 +83,9 @@ export default function New() {
     console.log(result);
 
     if (!result.cancelled) {
-      // const imageBase64 = await FileSystem.readAsStringAsync(result.uri, { encoding: 'base64' });
-      // setImage(imageBase64);
-      setImage(result.uri);
+      const imageBase64 = await FileSystem.readAsStringAsync(result.uri, { encoding: 'base64' });
+      setImage(imageBase64);
+      // setImage(result.uri);
 
       // setBase64Image(result.base64);
     }
@@ -146,8 +146,8 @@ export default function New() {
               <Text style={styles.textBtnUpload}><Feather name="upload" size={15} />  Procurar Imagem</Text>
             </TouchableOpacity>
 
-            {/* {image && <Image onChangeText={(text)=>setImage(text)} source={{ uri: `data:image/jpeg;base64,${image}` }} style={styles.imagePreview} />} */}
-            {image && <Image onChangeText={(text)=>setImage(text)} source={{ uri: image }} style={styles.imagePreview} />}
+            {image && <Image onChangeText={(text)=>setImage(text)} source={{ uri: `data:image/jpeg;base64,${image}` }} style={styles.imagePreview} />}
+            {/* {image && <Image onChangeText={(text)=>setImage(text)} source={{ uri: image }} style={styles.imagePreview} />} */}
 
             <TouchableOpacity style={styles.standardButtonNew} onPress={registerEvent}>
                <Text style={styles.standardButtonText}>Confirmar</Text>
