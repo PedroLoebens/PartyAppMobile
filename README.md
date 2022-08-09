@@ -35,7 +35,7 @@
 ## :hammer_and_wrench: Abrir e rodar o projeto
 Após baixar o projeto, você pode abrir com o Visual Studio Code. Para o projeto funcionar você deve ter configurado em seu PC:
 
-* Node.js - Versão >= 16.14.2
+* Node.js - Versão >= 16.16.0
 * Banco de dados MySQL
 
 Em seguida, abra um terminal e execute:
@@ -58,11 +58,11 @@ Em outro terminal na raiz do projeto execute:
 Agora o projeto está pronto para uso. 
 
 ## :white_check_mark: Tecnologias utilizadas
-* `Node.js - 16.14.2`
+* `Node.js - 16.16.0`
 * `Expo - 45.0.0`
 * `React Native - 0.68.2`
 * `Express - 4.18.1`
 * `Sequelize - 6.20.1`
-* `Nodemon - 2.0.16`
+* `Nodemon - 2.0.19`
 * `MySQL`
 * `JavaScript`
