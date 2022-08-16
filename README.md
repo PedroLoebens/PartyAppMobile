@@ -62,7 +62,7 @@ Agora o projeto está pronto para uso.
 * `Expo - 45.0.0`
 * `Express - 4.18.1`
 * `JavaScript`
-* `MySQL`
+* `MySQL Database`
 * `Node.js - 16.16.0`
 * `Nodemon - 2.0.19`
 * `React Native - 0.68.2`
