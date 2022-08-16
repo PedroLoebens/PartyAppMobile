@@ -1,4 +1,4 @@
-//Códigos das mensagens:
+//Códigos dos erros:
 //1 = sucesso
 //2 = erro
 
@@ -23,7 +23,7 @@ app.listen(port,(req,res)=>{
 
 //Routes
 app.post('/login',async(req,res)=>{
-  //Adiciona o nome e email digitado pelo usuário em variáveis.
+  //Adiciona o nome digitado pelo usuário em uma variável.
   const typedNameLogin = req.body.nameLogin;
   //Remove espaços em branco do início ou do fim da string
   const nameLogin = typedNameLogin.trim();

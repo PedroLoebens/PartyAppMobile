@@ -58,11 +58,12 @@ Em outro terminal na raiz do projeto execute:
 Agora o projeto está pronto para uso. 
 
 ## :white_check_mark: Tecnologias utilizadas
-* `Node.js - 16.16.0`
+* `Bcrypt - 5.0.1`
 * `Expo - 45.0.0`
-* `React Native - 0.68.2`
 * `Express - 4.18.1`
-* `Sequelize - 6.20.1`
-* `Nodemon - 2.0.19`
-* `MySQL`
 * `JavaScript`
+* `MySQL`
+* `Node.js - 16.16.0`
+* `Nodemon - 2.0.19`
+* `React Native - 0.68.2`
+* `Sequelize - 6.20.1`
