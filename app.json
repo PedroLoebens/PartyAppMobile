@@ -2,7 +2,7 @@
   "expo": {
     "name": "Party App Mobile",
     "slug": "party-app-mobile",
-    "version": "1.3.0",
+    "version": "1.3.2",
     "orientation": "portrait",
     "icon": "./src/assets/icons/icon2.png",
     "userInterfaceStyle": "light",
