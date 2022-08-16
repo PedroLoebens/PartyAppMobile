@@ -11,6 +11,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING(100)
       },
+      musicStyle: {
+        type: Sequelize.STRING(150)
+      },
       place: {
         type: Sequelize.STRING(150)
       },

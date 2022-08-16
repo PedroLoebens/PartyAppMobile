@@ -12,6 +12,7 @@ export default function New() {
   const goTop = React.useRef();
 
   const [name,setName]=useState(null);
+  const [musicStyle,setMusicStyle]=useState(null);
   const [place,setPlace]=useState(null);
   const [date,setDate]=useState('');
   const [price,setPrice]=useState(null);
@@ -33,6 +34,7 @@ export default function New() {
       },
       body: JSON.stringify({
           nameEvent: name,
+          musicStyleEvent: musicStyle,
           placeEvent: place,
           dateEvent: date,
           priceEvent: price,
@@ -66,6 +68,9 @@ export default function New() {
 
     setName({
       name: '',
+    });
+    setMusicStyle({
+      musicStyle: '',
     });
     setPlace({
       place: '',
@@ -118,6 +123,9 @@ export default function New() {
           <View style={styles.containerInputs}>
             <Text style={styles.label}>Nome do Evento:</Text>
             <TextInput style={styles.input} placeholder="Digite o nome do evento" onChangeText={(text)=>setName(text)} value={name}/>
+
+            <Text style={styles.label}>Estilo Musical:</Text>
+            <TextInput style={styles.input} placeholder="Digite o estilo musical" onChangeText={(text)=>setMusicStyle(text)} value={musicStyle}/>
 
             <Text style={styles.label}>Local do Evento:</Text>
             <TextInput style={styles.input} placeholder="Digite o local do evento" onChangeText={(text)=>setPlace(text)} value={place}/>

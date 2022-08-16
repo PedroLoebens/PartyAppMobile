@@ -45,7 +45,7 @@ export default function Search() {
 
         <View style={styles.containerInputs}>
           <Text style={styles.label}>Buscar evento:</Text>
-          <TextInput style={styles.input} placeholder="Digite o nome ou local do evento" onChangeText={(text)=>setSearch(text)} value={search}/>
+          <TextInput style={styles.input} placeholder="Digite o nome, local ou estilo musical" onChangeText={(text)=>setSearch(text)} value={search}/>
 
           <TouchableOpacity style={styles.standardButton} onPress={newSearch}>
              <Text style={styles.standardButtonText}>Buscar</Text>
@@ -57,6 +57,7 @@ export default function Search() {
           <View style={styles.containerSearchEvents}>
             {/* <Image style={styles.imageEvent} source={require('../assets/images/summer_party.jpg')}/> */}
             <Text style={styles.titleEvent}>{search.name}</Text>
+            <Text style={styles.textEvent}><Feather name="music" size={15} />  {search.musicStyle}</Text>
             <Text style={styles.textEvent}><Feather name="map-pin" size={15} />  {search.place}</Text>
             <Text style={styles.textEvent}><Feather name="calendar" size={15} />  {search.date}</Text>
             <Text style={styles.textEvent}><Feather name="dollar-sign" size={15} />  {search.price}</Text>

@@ -101,7 +101,7 @@ app.post('/signup',async(req,res)=>{
 
 app.get('/read', async (req,res)=>{
   let read = await model.Events.findAll({
-    attributes: ['id', 'image', 'name', 'place', 'date', 'price'],
+    attributes: ['id', 'image', 'name', 'musicStyle', 'place', 'date', 'price'],
     raw:true
   });
 
@@ -110,13 +110,16 @@ app.get('/read', async (req,res)=>{
 
 app.post('/create',async(req,res)=>{
   const typedNameEvent = req.body.nameEvent;
+  const typedMusicStyleEvent = req.body.musicStyleEvent;
   const typedPlaceEvent = req.body.placeEvent;
 
   const nameEvent = typedNameEvent.trim();
+  const musicStyleEvent = typedMusicStyleEvent.trim();
   const placeEvent = typedPlaceEvent.trim();
 
   let create = await model.Events.create({
     'name': nameEvent,
+    'musicStyle': musicStyleEvent,
     'place': placeEvent,
     'date': req.body.dateEvent,
     'price': req.body.priceEvent,
@@ -139,7 +142,9 @@ app.post('/search', async (req,res)=>{
   const searchEvent = typedSearchEvent.trim();
 
   let resulSearch = await model.Events.findAll({
-    attributes: ['id', 'image', 'name', 'place', 'date', 'price'],
+    attributes: ['id', 'image', 'name', 'musicStyle', 'place', 'date', 'price'],
+    
+    //Define por quais atributos será realizada a pesquisa no DB
     where: {
       [Op.or]: [
         {
@@ -149,6 +154,11 @@ app.post('/search', async (req,res)=>{
         }, 
         {
           place: {
+          [Op.substring]: searchEvent,
+          }
+        },
+        {
+          musicStyle: {
           [Op.substring]: searchEvent,
           }
         }
