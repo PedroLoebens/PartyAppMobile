@@ -13,8 +13,8 @@
 
 2- `DEFINIÇÃO:` Depois de analisar, ou fazer uma pesquisa de opinião defina o problema que será resolvido.
 
-* Pensando no marketing, buscaremos elaborar um aplicativo que ajuda empresários que promovem festas a divulgarem seus eventos com local e data de uma forma que chegue até o público consumidor de forma simples e automática, onde o próprio consumidor vai buscar por isso.
-* Também pensando nos jovens e adultos que gostam de uma boa festa mas geralmente não sabem quando e onde vai acontecer e, se realmente mais pessoas irão, o que torna em teoria a festa mais “empolgante”.
+* Pensando no marketing, buscaremos elaborar um aplicativo que ajuda empresários que promovem festas a divulgarem seus eventos com local e data de uma forma que chegue até o público consumidor de forma simples e automática, onde o próprio consumidor buscará por isso.
+* Também pensando nos jovens e adultos que gostam de uma boa festa, mas geralmente não sabem quando e onde acontecerá e, se realmente mais pessoas irão, tornando em teoria a festa mais “empolgante”.
 
 3- `IDEALIZAR:` Chuva de ideias: depois de definir o problema realize com seu grupo uma chuva de ideias, todas são válidas, um dos membros do grupo pode ficar encarregado de anotá-las.
 
