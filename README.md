@@ -35,7 +35,7 @@
 * `Pesquisa de eventos`: opção de pesquisar eventos pelo nome, estilo musical ou local.
 
 <br>
-<div display: inline_block>
+<div display: inline_block align="center">
     <img src="./src/assets/img/screenshots/screenshot01.png" alt="Screenshot tela home"/>
     <img src="./src/assets/img/screenshots/screenshot02.png" alt="Screenshot tela cadastro"/>
     <img src="./src/assets/img/screenshots/screenshot03.png" alt="Screenshot tela pesquisa"/>
