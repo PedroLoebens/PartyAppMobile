@@ -35,9 +35,11 @@
 * `Pesquisa de eventos`: opção de pesquisar eventos pelo nome, estilo musical ou local.
 
 <br>
-<img src="./src/assets/img/screenshots/screenshot01.png" alt="Screenshot tela home"/>
-<img src="./src/assets/img/screenshots/screenshot02.png" alt="Screenshot tela cadastro"/>
-<img src="./src/assets/img/screenshots/screenshot03.png" alt="Screenshot tela pesquisa"/>
+<div display: inline_block>
+    <img src="./src/assets/img/screenshots/screenshot01.png" alt="Screenshot tela home"/>
+    <img src="./src/assets/img/screenshots/screenshot02.png" alt="Screenshot tela cadastro"/>
+    <img src="./src/assets/img/screenshots/screenshot03.png" alt="Screenshot tela pesquisa"/>
+</div>
 
 ## :hammer_and_wrench: Abrir e rodar o projeto
 Após baixar o projeto, você pode abrir com o Visual Studio Code. Para o projeto funcionar você deve ter configurado em seu PC:
