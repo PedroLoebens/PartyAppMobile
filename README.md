@@ -4,7 +4,7 @@
    <!-- <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-orange?style=for-the-badge"/> -->
 </p>
 
-<img width="150" src="./src/assets/icons/icon2.png" alt="Ícone Party GO"/>
+<img src="./src/assets/icons/icon2.png" alt="Ícone Party GO"/>
 
 * `PROJETO NO FIGMA` ----------->> https://www.figma.com/file/tj82IcClr5erxg0lbAZ6L9/Prototyping-in-Figma?node-id=0%3A1
 
