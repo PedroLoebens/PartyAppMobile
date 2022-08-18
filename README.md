@@ -4,6 +4,10 @@
    <!-- <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-orange?style=for-the-badge"/> -->
 </p>
 
+<br>
+<img src="./src/assets/icons/icon2.png" alt="Ícone Party GO"/>
+<br>
+
 * `PROJETO NO FIGMA` ----------->> https://www.figma.com/file/tj82IcClr5erxg0lbAZ6L9/Prototyping-in-Figma?node-id=0%3A1
 
 1- `EMPATIA:` Comece com a empatia levantando hipóteses sobre o que as pessoas precisam, pode fazer isso fazendo análise de um grupo específico. (ambiente escolar, mensagens, música, transporte.)
@@ -31,6 +35,11 @@
 * `Exibição dos eventos cadastrados`: exibição na tela Home de todos os eventos cadastrados no banco de dados.
   
 * `Pesquisa de eventos`: opção de pesquisar eventos pelo nome, estilo musical ou local.
+
+<br>
+<img src="./src/assets/img/screenshots/screenshot01.png" alt="Screenshot tela home"/>
+<img src="./src/assets/img/screenshots/screenshot02.png" alt="Screenshot tela cadastro"/>
+<img src="./src/assets/img/screenshots/screenshot03.png" alt="Screenshot tela pesquisa"/>
 
 ## :hammer_and_wrench: Abrir e rodar o projeto
 Após baixar o projeto, você pode abrir com o Visual Studio Code. Para o projeto funcionar você deve ter configurado em seu PC:

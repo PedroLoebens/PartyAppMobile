@@ -55,7 +55,7 @@ export default function Search() {
 
           {ResulResearches?.map((search) => (
           <View style={styles.containerSearchEvents}>
-            {/* <Image style={styles.imageEvent} source={require('../assets/images/summer_party.jpg')}/> */}
+            {/* <Image style={styles.imageEvent} source={require('../assets/img/summer_party.jpg')}/> */}
             <Text style={styles.titleEvent}>{search.name}</Text>
             <Text style={styles.textEvent}><Feather name="music" size={15} />  {search.musicStyle}</Text>
             <Text style={styles.textEvent}><Feather name="map-pin" size={15} />  {search.place}</Text>

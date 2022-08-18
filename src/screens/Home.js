@@ -65,7 +65,7 @@ export default function Home({navigation}) {
 
         {Events?.map((event) => (
           <View style={styles.containerEvents}>
-            {/* <Image style={styles.imageEvent} source={require('../assets/images/summer_party.jpg')}/> */}
+            {/* <Image style={styles.imageEvent} source={require('../assets/img/summer_party.jpg')}/> */}
             <Text style={styles.titleEvent}>{event.name}</Text>
             <Text style={styles.textEvent}><Feather name="music" size={15} />  {event.musicStyle}</Text>
             <Text style={styles.textEvent}><Feather name="map-pin" size={15} />  {event.place}</Text>
