@@ -28,7 +28,7 @@ export default function ShowBottomTabs() {
         ),
       }}/>
 
-      <Tab.Screen name="Search" component={SearchNavigation} 
+      <Tab.Screen name="Buscar" component={SearchNavigation} 
       options={{
         tabBarIcon: ({ color }) => (
           <Feather name="search" size={20} color={color} />
